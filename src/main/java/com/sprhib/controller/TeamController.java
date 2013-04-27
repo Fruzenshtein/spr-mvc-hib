@@ -14,19 +14,20 @@ import com.sprhib.model.Team;
 import com.sprhib.service.TeamService;
 
 @Controller
+@RequestMapping(value="/team")
 public class TeamController {
 	
 	@Autowired
 	private TeamService teamService;
 	
-	@RequestMapping(value="/team/add")
+	@RequestMapping(value="/add", method=RequestMethod.GET)
 	public ModelAndView addTeamPage() {
 		ModelAndView modelAndView = new ModelAndView("add-team-form");
 		modelAndView.addObject("team", new Team());
 		return modelAndView;
 	}
 	
-	@RequestMapping(value="/team/add/process")
+	@RequestMapping(value="/add", method=RequestMethod.POST)
 	public ModelAndView addingTeam(@ModelAttribute Team team) {
 		
 		ModelAndView modelAndView = new ModelAndView("home");
@@ -38,7 +39,7 @@ public class TeamController {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value="/team/list")
+	@RequestMapping(value="/list")
 	public ModelAndView listOfTeams() {
 		ModelAndView modelAndView = new ModelAndView("list-of-teams");
 		
@@ -48,7 +49,7 @@ public class TeamController {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value="/team/edit/{id}", method=RequestMethod.GET)
+	@RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
 	public ModelAndView editTeamPage(@PathVariable Integer id) {
 		ModelAndView modelAndView = new ModelAndView("edit-team-form");
 		Team team = teamService.getTeam(id);
@@ -56,7 +57,7 @@ public class TeamController {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value="/team/edit/{id}", method=RequestMethod.POST)
+	@RequestMapping(value="/edit/{id}", method=RequestMethod.POST)
 	public ModelAndView edditingTeam(@ModelAttribute Team team, @PathVariable Integer id) {
 		
 		ModelAndView modelAndView = new ModelAndView("home");
@@ -69,7 +70,7 @@ public class TeamController {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value="/team/delete/{id}", method=RequestMethod.GET)
+	@RequestMapping(value="/delete/{id}", method=RequestMethod.GET)
 	public ModelAndView deleteTeam(@PathVariable Integer id) {
 		ModelAndView modelAndView = new ModelAndView("home");
 		teamService.deleteTeam(id);

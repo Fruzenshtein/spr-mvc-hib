@@ -16,5 +16,4 @@ public class LinkController {
 	public ModelAndView indexPage() {
 		return new ModelAndView("home");
 	}
-
 }

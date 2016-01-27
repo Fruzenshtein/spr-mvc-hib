@@ -12,12 +12,12 @@ import com.sprhib.model.Team;
 @Service
 @Transactional
 public class TeamServiceImpl implements TeamService {
-	
+
 	@Autowired
 	private TeamDAO teamDAO;
 
 	public void addTeam(Team team) {
-		teamDAO.addTeam(team);		
+		teamDAO.addTeam(team);
 	}
 
 	public void updateTeam(Team team) {

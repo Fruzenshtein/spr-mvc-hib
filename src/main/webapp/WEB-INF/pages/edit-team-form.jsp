@@ -12,6 +12,7 @@
 <title>Edit team page</title>
 </head>
 <body>
+
 <h1>Edit team page</h1>
 <p>Here you can edit the existing team.</p>
 <p>${message}</p>

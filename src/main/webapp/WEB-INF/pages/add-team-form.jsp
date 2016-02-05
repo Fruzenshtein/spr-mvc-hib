@@ -9,30 +9,35 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 <title>Add team page</title>
 </head>
 <body>
-<h1>Add team page</h1>
+<div class="container-fluid">
+<p><a href="${pageContext.request.contextPath}/index.html">Home page</a></p>
+<div class="row text-center">
+
+<h1 class="text-center"> Add team page</h1>
 <p>Here you can add a new team.</p>
 <form:form method="POST" commandName="team" action="${pageContext.request.contextPath}/team/add.html">
-<table>
-<tbody>
-	<tr>
-		<td>Name:</td>
-		<td><form:input path="name" /></td>
-	</tr>
-	<tr>
-		<td>Rating:</td>
-		<td><form:input path="rating" /></td>
-	</tr>
-	<tr>
-		<td><input type="submit" value="Add" /></td>
-		<td></td>
-	</tr>
-</tbody>
-</table>
+<div class="col-md-4">
+Name:  <form:input path="name" /></div>
+	<div class="col-md-4">
+
+		Rating:  <form:input path="rating" />
+	
+	</div>
+	<div class="col-md-4">
+		<button type="submit" class="btn btn-success" >ADD</button>
+		</div>
+
+
 </form:form>
 
-<p><a href="${pageContext.request.contextPath}/index.html">Home page</a></p>
+
+
+</div>
+</div>
+
 </body>
 </html>
